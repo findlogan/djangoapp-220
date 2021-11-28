@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <section class="text-white bg-primary mb-0" id="about" style="padding-bottom: 0px;padding-top: 62px; margin-top: 10vh; height: 174.8px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 me-auto" style="width: 200px;">
+                    <p class="lead"><br></p>
+                </div>
+                <div class="col" style="width: 447px;">
+                    <p class="lead">We offer a wide range of events to cater. We have experience catering weddings, business events, and will work with you on providing our exceptional service to any event you're deciding on planning!<br></p>
+                </div>
+                <div class="col-lg-4 ms-auto" style="width: 200px;">
+                    <p class="lead"><br><br></p>
+                </div>
+            </div>
+            <div class="text-center mt-4"></div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <h2 class="text-uppercase text-center text-secondary mb-0">Book with us</h2>
+            <hr class="star-dark mb-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                        <div class="control-group">
+                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="text" id="name" required="" placeholder="Name"><label class="form-label">Name</label><small class="form-text text-danger help-block"></small></div>
+                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" id="name-1" required="" placeholder="Name"><label class="form-label">Date &amp; Time</label><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div class="control-group">
+                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="email" id="email" required="" placeholder="Email Address"><label class="form-label">Email Address</label><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div class="control-group">
+                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="tel" id="phone" required="" placeholder="Phone Number"><label class="form-label">Phone Number</label><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div class="control-group"></div>
+                        <div id="success"></div>
+                        <div><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit" style="margin-top: 36px;">Book</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+{% endblock content %}

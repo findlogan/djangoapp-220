@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <header class="text-center text-white bg-primary masthead" style="background: url(&quot;{% static 'img/photo-1447933601403-0c6688de566e.jpeg' %}&quot;);">
+        <div class="container" style="background: rgba(21,21,21,0.58);height: 488.6px;">
+            <h1 style="margin-top: -7px;padding-top: 129px;">Coffee Menu</h1>
+            <hr class="star-light">
+            <h2 class="font-weight-light mb-0">Dark - Light - Decaf</h2>
+        </div>
+    </header>
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="text-uppercase text-center text-secondary"></h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-1" data-bs-toggle="modal">
+                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="{% static 'img/portfolio/photo-1552938218-ac9ec40c702a.jpeg' %}" style="height: 267px;width: 400px;">
+                    </a></div>
+                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-2" data-bs-toggle="modal">
+                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="{% static 'img/portfolio/photo-1468418143278-41595b1a4c89.png' %}" style="height: 267px;width: 400px;">
+                    </a></div>
+                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-3" data-bs-toggle="modal">
+                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100" style="height: 237px;">
+                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="{% static 'img/portfolio/1.png' %}" style="height: 267px;width: 400px;">
+                    </a></div>
+                <div class="col-md-6 col-lg-4" style="margin-top: 41px;"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-4" data-bs-toggle="modal">
+                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="{% static 'img/portfolio/2.png' %}" style="height: 267px;">
+                    </a></div>
+                <div class="col-md-6 col-lg-4" style="margin-top: 40px;"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-5" data-bs-toggle="modal">
+                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="{% static 'img/portfolio/3.png' %}" style="height: 267px;width: 400px;">
+                    </a></div>
+                <div class="col-md-6 col-lg-4" style="margin-top: 40px;"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-6" data-bs-toggle="modal">
+                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100"><i class="fa fa-search-plus fa-3x"></i>
+                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"></div>
+                        </div><img class="img-fluid" src="{% static 'img/portfolio/photo-1623839014265-91b83ec96b92.jpeg' %}" style="height: 267px;width: 400px;">
+                    </a></div>
+            </div>
+        </div>
+    </section>
+  
+{% endblock content %}
