@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section id="portfolio-3" class="portfolio" style="padding-top: 0px;padding-bottom: 54px;margin-top: 175px;">
+    <div class="container" style="padding-bottom: 0px;">
+        <h2 class="text-uppercase text-center text-secondary">Merchandise</h2>
+        <hr class="star-dark mb-5">
+        <div class="row">
+            {% for merchandise in merchandises %}
+            <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#{{ merchandise.modalVal }}" data-bs-toggle="modal">
+                <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                    <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="{{ merchandise.imgURL.url }}">
+            </a></div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    {% for merchandise in merchandises %}
+    <div class="modal text-center" role="dialog" tabindex="-1" id="{{ merchandise.modalVal }}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">{{ merchandise.name }}</h2>
+                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="{{ merchandise.imgURL.url }}">
+                                <p class="mb-5" style="color: var(--bs-blue);"></p>
+                                <div><button class="btn btn-primary" type="button" style="margin-bottom: 4px;padding-right: 5px;margin-right: 10px;">Purchase&nbsp;&nbsp;</button><input type="number" style="width: 37px;height: 41px;margin-right: 13px;margin-top: 0px;border-radius: 8px;margin-left: 2px;padding-right: 0px;padding-left: 2px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"></div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock content %}

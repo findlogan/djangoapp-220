@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Merchandise, Sandwhiches, Coffee, Beer
 
-# Register your models here.
+admin.site.register(Merchandise)
+admin.site.register(Sandwhiches)
+admin.site.register(Coffee)
+admin.site.register(Beer)

@@ -3,91 +3,99 @@
 {% load static %}
 
 {% block content %}
-    <header class="text-center text-white bg-primary masthead" style="background: url('https://i.imgur.com/mfY3vOF.png'), center / cover no-repeat;">
-        <div class="container" style="background: rgba(21,21,21,0.58);height: 488.6px;">
-            <h1 style="margin-top: -7px;padding-top: 129px;">Welcome!</h1>
-            <hr class="star-light">
-            <h2 class="font-weight-light mb-0">Beer - Coffee - Sandwiches</h2>
+<header class="text-center text-white bg-primary masthead" style="background: url({% static 'img/header.jpeg' %}) center / cover no-repeat;">
+    <div class="container" style="background: rgba(21,21,21,0.58);height: 488.6px;">
+        <h1 style="margin-top: -7px;padding-top: 129px;">Welcome!</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">Beer - Coffee - Sandwiches</h2>
+    </div>
+</header>
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <h2 class="text-uppercase text-center text-secondary">Sandwhiches</h2>
+        <hr class="star-dark mb-5">
+        <div class="row">
+            {% for sandwhich in sandwhichess %}
+            <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#{{ sandwhich.modalVal }}" data-bs-toggle="modal">
+                <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                    <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="{{ sandwhich.imgURL.url }}">
+            </a></div>
+            {% endfor %}
+            
         </div>
-    </header>
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="text-uppercase text-center text-secondary">Sandwhiches</h2>
-            <hr class="star-dark mb-5">
-            <div class="row">
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-1" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="{% static 'img/portfolio/photo-1485451456034-3f9391c6f769.jpeg' %}">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-2" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="{% static 'img/portfolio/photo-1550507992-eb63ffee0847.jpeg' %}">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-3" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="{% static 'img/portfolio/photo-1567234669003-dce7a7a88821.jpeg' %}">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-4" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="{% static 'img/portfolio/photo-1619096534329-564c333a95b3.jpeg' %}">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-5" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="{% static 'img/portfolio/photo-1619096252214-ef06c45683e3.jpeg' %}">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-6" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="{% static 'img/portfolio/photo-1592415486689-125cbbfcbee2.jpeg' %}">
-                    </a></div>
+    </div>
+</section>
+<section class="text-white bg-primary mb-0" id="about">
+    <div class="container">
+        <h2 class="text-uppercase text-center text-white">About us</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+            <div class="col-lg-4 ms-auto">
+                <p class="lead">Plaid Pearl Café is a gem situated in the heart of Greenwich Village. For 10 years is, without any doubt the best café &amp; Sandwich shop in Kentucky. Also well known for its catering and special event platters. Plaid Pearl Café follows two simple but effective rules: Artisanal recipes and High-quality ingredients.&nbsp;<br><br><br></p>
+            </div>
+            <div class="col-lg-4 me-auto">
+                <p class="lead">This is the secret of its success and the reason why Maria Valencia, the owner, wants to export her gem to other neighbors and cities around the states. Once you can deliver constantly such a quality product it's time to grow up and expand your vision.<br><br></p>
             </div>
         </div>
-    </section>
-    <section class="text-white bg-primary mb-0" id="about">
-        <div class="container">
-            <h2 class="text-uppercase text-center text-white">About us</h2>
-            <hr class="star-light mb-5">
-            <div class="row">
-                <div class="col-lg-4 ms-auto">
-                    <p class="lead">Plaid Pearl Café is a gem situated in the heart of Greenwich Village. For 10 years is, without any doubt the best café &amp; Sandwich shop in Kentucky. Also well known for its catering and special event platters. Plaid Pearl Café follows two simple but effective rules: Artisanal recipes and High-quality ingredients.&nbsp;<br><br><br></p>
-                </div>
-                <div class="col-lg-4 me-auto">
-                    <p class="lead">This is the secret of its success and the reason why Maria Valencia, the owner, wants to export her gem to other neighbors and cities around the states. Once you can deliver constantly such a quality product it's time to grow up and expand your vision.<br><br></p>
-                </div>
-            </div>
-            <div class="text-center mt-4"><a class="btn btn-outline-light btn-xl" role="button" href="#"><i class="fa fa-download me-2"></i><span>Download Application!</span></a></div>
-        </div>
-    </section>
-    <section id="contact">
-        <div class="container">
-            <h2 class="text-uppercase text-center text-secondary mb-0">Contact us</h2>
-            <hr class="star-dark mb-5">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                        <div class="control-group">
-                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="text" id="name" required="" placeholder="Name"><label class="form-label">Name</label><small class="form-text text-danger help-block"></small></div>
-                        </div>
-                        <div class="control-group">
-                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="email" id="email" required="" placeholder="Email Address"><label class="form-label">Email Address</label><small class="form-text text-danger help-block"></small></div>
-                        </div>
-                        <div class="control-group">
-                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="tel" id="phone" required="" placeholder="Phone Number"><label class="form-label">Phone Number</label><small class="form-text text-danger help-block"></small></div>
-                        </div>
-                        <div class="control-group">
-                            <div class="mb-5 form-floating controls pb-2"><textarea class="form-control" id="message" required="" placeholder="Message" style="height: 150px;"></textarea><label class="form-label">Message</label><small class="form-text text-danger help-block"></small></div>
-                        </div>
-                        <div id="success"></div>
-                        <div><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send</button></div>
-                    </form>
-                </div>
+        <div class="text-center mt-4"><a class="btn btn-outline-light btn-xl" role="button" href="/application"><span>Send us your resume!</span></a></div>
+    </div>
+</section>
+<section id="contact">
+    <div class="container">
+        <h2 class="text-uppercase text-center text-secondary mb-0">Contact us</h2>
+        <hr class="star-dark mb-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                    <div class="control-group">
+                        <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="text" id="name" required="" placeholder="Name"><label class="form-label">Name</label><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="email" id="email" required="" placeholder="Email Address"><label class="form-label">Email Address</label><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="tel" id="phone" required="" placeholder="Phone Number"><label class="form-label">Phone Number</label><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="mb-5 form-floating controls pb-2"><textarea class="form-control" id="message" required="" placeholder="Message" style="height: 150px;"></textarea><label class="form-label">Message</label><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div id="success"></div>
+                    <div><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send</button></div>
+                </form>
             </div>
         </div>
-    </section>
-    
+    </div>
+</section>
+
+
+<!-- Modals -->
+
+{% for sandwhich in sandwhichess %}
+
+<div class="modal text-center" role="dialog" tabindex="-1" id="{{ sandwhich.modalVal }}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            <div class="modal-body">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h2 class="text-uppercase text-secondary mb-0">{{ sandwhich.name }}</h2>
+                            <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="{{ sandwhich.imgURL.url }}">
+                            <p class="mb-5">{{ sandwhich.desc }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer pb-5"></div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+
 {% endblock content %}
+
+

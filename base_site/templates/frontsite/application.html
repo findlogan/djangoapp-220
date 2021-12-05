@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<header class="text-center text-white bg-primary masthead" style="background: url('https://i.imgur.com/MHKRKP3.png') center / cover, rgb(24, 188, 156);">
+    <div class="container" style="background: rgba(21,21,21,0.58);height: 488.6px;">
+        <h1 style="margin-top: -7px;padding-top: 129px;">Application</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">Competitive wages - Flexible scheduling - Great experiences!</h2>
+    </div>
+</header><!-- Start: Contact Form Clean -->
+<section class="contact-clean" style="background: rgb(24,188,156);">
+    <form method="post">
+        <h2 class="text-center">Contact us</h2><!-- Start: Success Example -->
+        <div class="mb-3"><input class="form-control" type="text" name="name" placeholder="Name"></div><!-- End: Success Example -->
+        <!-- Start: Error Example -->
+        <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" style="border-top-color: rgb(80,;border-right-color: 94,;border-bottom-color: 108);border-left-color: 94,;"></div><!-- End: Error Example -->
+        <div class="mb-3"><textarea class="form-control" name="message" placeholder="Message" rows="14"></textarea><!-- Start: Resume --><input class="form-control" type="file" name="Resume" style="margin-top: 19px;height: 39px;"><!-- End: Resume --><label class="form-label">Please attach resume</label></div>
+        <div class="mb-3"></div><button class="btn btn-primary" type="submit">send </button>
+    </form>
+</section><!-- End: Contact Form Clean -->
+
+{% endblock content %}
+

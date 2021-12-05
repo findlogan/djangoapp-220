@@ -1,16 +1,27 @@
 from django.shortcuts import render
+from .models import Beer, Coffee, Sandwhiches, Merchandise
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
+    sandwhichess = Sandwhiches.objects.all()
+    return render(request, 'home.html', {'sandwhichess': sandwhichess})
 
 
 def beer(request):
-    return render(request, 'beer.html')
+    beers = Beer.objects.all()
+    return render(request, 'beer.html', {'beers': beers})
     
 def coffee(request):
-    return render(request, 'coffee.html')
+    coffees = Coffee.objects.all()
+    return render(request, 'coffee.html', {'coffees': coffees})
     
 def catering(request):
     return render(request, 'catering.html')
+
+def application(request):
+    return render(request, 'application.html')
+
+def store(request):
+    merchandises = Merchandise.objects.all()
+    return render(request, 'store.html', {'merchandises': merchandises})
